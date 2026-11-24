@@ -1,0 +1,20 @@
+---
+/**
+ * The publication rhythm, identical on every section:
+ * [brass numeral] [Archivo label] [brass hairline] [serif headline]
+ * The numeral hangs in the left margin on the heading's first baseline.
+ */
+interface Props {
+  num?: string;
+  label: string;
+  level?: 'h1' | 'h2';
+  id?: string;
+  class?: string;
+}
+const { label, level = 'h2', id, class: cls = '' } = Astro.props;
+const H = level;
+---
+<div class:list={['sh', cls]}>
+  <p class="sh__label label" data-scramble>{label}</p>
+  <H class:list={['sh__title', level === 'h1' ? 'display' : 'h2']} id={id}><slot /></H>
+</div>

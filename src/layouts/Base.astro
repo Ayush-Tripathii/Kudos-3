@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import {
+  SITE_URL, BRAND, ADDRESS, GEO, HOURS, PRICE_RANGE, PHONE_TEL, SOCIALS, MENU_URL, isSet,
+} from '../config';
+
+const title = 'Kudos Restro Lounge — Rooftop Restaurant, Udaipur';
+const description =
+  'Rooftop restro lounge in Udaipur facing Lake Pichola and City Palace. Multi-cuisine food, cocktails, sunset dining and music. Simple food, great evenings.';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const canonical = SITE_URL + '/';
+const ogImage = SITE_URL + '/img/og-kudos-1200x630.jpg';
+
+const dayUrl = (d: string) => `https://schema.org/${d}`;
+const hoursLd = HOURS.filter((h) => isSet(h.opens) && isSet(h.closes)).map((h) => ({
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: h.days.map(dayUrl),
+  opens: h.opens,
+  closes: h.closes,
+}));
+
+const ld: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': ['Restaurant', 'BarOrPub'],
+  '@id': canonical + '#restaurant',
+  name: BRAND.name,
+  slogan: BRAND.tagline,
+  description,
+  url: canonical,
+  image: [ogImage, SITE_URL + '/img/kudos-terrace-palace-table-4x5-1600.jpg'],
+  servesCuisine: ['Multi-cuisine', 'Rajasthani', 'North Indian', 'Italian', 'Mexican', 'Pan-Asian'],
+  acceptsReservations: true,
+  address: {
+    '@type': 'PostalAddress',
+    ...(isSet(ADDRESS.street) && { streetAddress: ADDRESS.street }),
+    addressLocality: ADDRESS.locality,
+    addressRegion: ADDRESS.region,
+    ...(isSet(ADDRESS.postalCode) && { postalCode: ADDRESS.postalCode }),
+    addressCountry: ADDRESS.country,
+  },
+  founder: { '@type': 'Person', name: BRAND.founder },
+};
+if (GEO.lat !== null && GEO.lng !== null) ld.geo = { '@type': 'GeoCoordinates', latitude: GEO.lat, longitude: GEO.lng };
+if (isSet(PRICE_RANGE)) ld.priceRange = PRICE_RANGE;
+if (isSet(PHONE_TEL)) ld.telephone = PHONE_TEL;
+if (hoursLd.length) ld.openingHoursSpecification = hoursLd;
+ld.hasMenu = isSet(MENU_URL) ? MENU_URL : canonical + '#food';
+const sameAs = SOCIALS.filter((s) => isSet(s.url)).map((s) => s.url);
+if (sameAs.length) ld.sameAs = sameAs;
+---
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="theme-color" content="#F7F0E4" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:site_name" content={BRAND.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Kudos rooftop terrace at dusk, facing City Palace and Lake Pichola in Udaipur." />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- LCP: the hero arch photo, requested before anything else -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+    imagesrcset={`${base}/img/kudos-terrace-palace-table-4x5-640.avif 640w, ${base}/img/kudos-terrace-palace-table-4x5-768.avif 768w, ${base}/img/kudos-terrace-palace-table-4x5-1024.avif 1024w, ${base}/img/kudos-terrace-palace-table-4x5-1600.avif 1600w`}
+    imagesizes="(min-width: 1440px) 640px, (min-width: 1024px) 42vw, 100vw" />
+  <!-- all four subset fonts (~75 KB total) preload together so they swap in one pass, not four relayouts -->
+  <link rel="preload" href={`${base}/fonts/instrument-serif-latin-400-normal.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${base}/fonts/instrument-serif-latin-400-italic.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${base}/fonts/switzer-400.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${base}/fonts/archivo-latin-wdth-normal.woff2`} as="font" type="font/woff2" crossorigin />
+
+  <!-- motion bootstrap: runs before first paint, ~500 bytes -->
+  <script is:inline>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (rm) d.classList.add('rm');
+      try {
+        if (!rm && !sessionStorage.getItem('kudos-intro')) {
+          d.classList.add('has-intro');
+          sessionStorage.setItem('kudos-intro', '1');
+          // no teardown: the overlay's own animation ends at visibility:hidden.
+          // (Toggling a class on <html> or removing the node forces a full-page restyle.)
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</head>
+<body>
+  <slot />
+</body>
+</html>

@@ -1,0 +1,57 @@
+---
+/**
+ * Responsive, CLS-proof picture.
+ * - fixed aspect-ratio wrapper  - AVIF → WebP → JPEG
+ * - blurred 20px LQIP that cross-fades out  - optional arch / aperture reveal
+ */
+import manifest from '../data/images.json';
+import { ALT } from '../data/content';
+
+type Crop = '4x5' | '3x2' | '1x1';
+interface Props {
+  name: string;
+  crop: Crop;
+  sizes: string;
+  alt?: string;
+  arch?: boolean;
+  aperture?: boolean;
+  eager?: boolean;
+  class?: string;
+}
+const { name, crop, sizes, alt, arch = false, aperture = true, eager = false, class: cls = '' } = Astro.props;
+
+const entry = (manifest as Record<string, { crops: Record<string, { widths: number[]; lqip: string }> }>)[name]?.crops?.[crop];
+if (!entry) throw new Error(`Image not in manifest: ${name} ${crop} — run "npm run images"`);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ratio = { '4x5': [4, 5], '3x2': [3, 2], '1x1': [1, 1] }[crop];
+const src = (w: number, f: string) => `${base}/img/${name}-${crop}-${w}.${f}`;
+const set = (f: string, ws: number[]) => ws.map((w) => `${src(w, f)} ${w}w`).join(', ');
+const jpgWidths = entry.widths.filter((w) => w <= 1600);
+const fallbackW = jpgWidths.includes(1024) ? 1024 : jpgWidths[jpgWidths.length - 1];
+const w = fallbackW;
+const h = Math.round((fallbackW * ratio[1]) / ratio[0]);
+const altText = alt ?? ALT[name] ?? '';
+---
+<div
+  class:list={['media', { 'media--arch': arch, 'ap': aperture, 'media--eager': eager }, cls]}
+  style={`--ar:${ratio[0]}/${ratio[1]};--lqip:url(${entry.lqip})`}
+  data-reveal={aperture ? 'ap' : undefined}
+>
+  <picture>
+    <source type="image/avif" srcset={set('avif', entry.widths)} sizes={sizes} />
+    <source type="image/webp" srcset={set('webp', jpgWidths)} sizes={sizes} />
+    <img
+      src={src(fallbackW, 'jpg')}
+      srcset={set('jpg', jpgWidths)}
+      sizes={sizes}
+      width={w}
+      height={h}
+      alt={altText}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding={eager ? 'sync' : 'async'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      onload="this.closest('.media').classList.add('is-loaded')"
+    />
+  </picture>
+</div>

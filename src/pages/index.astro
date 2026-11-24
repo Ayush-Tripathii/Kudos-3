@@ -1,0 +1,620 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import SectionHead from '../components/SectionHead.astro';
+import {
+  SECTIONS, HEADER_NAV, PILLARS, CHAPTERS, MOODS, MENU, NIGHTS, DIFFERENT, TICKER, GALLERY, CAPTION, ALT,
+} from '../data/content';
+import {
+  BRAND, WA_BOOKING, WA_EVENTS, MENU_LINK, TEL_LINK, PHONE_DISPLAY, DIRECTIONS_URL, ADDRESS, HOURS,
+  SOCIALS, FORM_ENDPOINT, WHATSAPP_NUMBER, isSet,
+} from '../config';
+
+const year = new Date().getFullYear();
+const hoursJson = JSON.stringify(HOURS.filter((h) => isSet(h.opens) && isSet(h.closes)));
+const addressLine = [isSet(ADDRESS.street) ? ADDRESS.street : null, ADDRESS.locality, ADDRESS.region, isSet(ADDRESS.postalCode) ? ADDRESS.postalCode : null]
+  .filter(Boolean).join(', ');
+const socials = SOCIALS.filter((s) => isSet(s.url));
+const phoneSet = isSet(PHONE_DISPLAY);
+const galleryItems = GALLERY.map((name, i) => ({
+  name,
+  i,
+  code: `K/${String(i + 1).padStart(2, '0')}`,
+  caption: CAPTION[name],
+  dish: name.startsWith('kudos-dish-'),
+}));
+const tickerRun = [...TICKER, ...TICKER];
+---
+<Base>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 00 · INTRO — plaster screen, grid draws, wordmark types, grid recedes -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__grid">
+      {Array.from({ length: 7 }).map((_, i) => <span class="intro__v" style={`--i:${i}`}></span>)}
+      {Array.from({ length: 5 }).map((_, i) => <span class="intro__h" style={`--i:${i}`}></span>)}
+    </div>
+    <p class="intro__mark">{'KUDOS'.split('').map((c, i) => <span style={`--i:${i}`}>{c}</span>)}</p>
+    <p class="intro__sub">Restro Lounge · Udaipur</p>
+  </div>
+
+  <!-- progress bar (rail replacement under 1024px) -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <!-- 15 · STICKY HEADER -->
+  <header class="hdr" data-hdr>
+    <div class="hdr__bg" aria-hidden="true"></div>
+    <div class="hdr__inner">
+      <a class="brand" href="#top" aria-label="Kudos Restro Lounge — back to top">
+        <svg class="brand__mark" viewBox="0 0 32 40" aria-hidden="true">
+          <path d="M3 39V17C3 9.3 8.8 3 16 3s13 6.3 13 14v22" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M11 39V18M11 28l9-10M14.5 25l6.5 14" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        </svg>
+        <span class="brand__word">Kudos</span>
+      </a>
+      <nav class="hdr__nav" aria-label="Sections">
+        <ul>{HEADER_NAV.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </nav>
+      <a class="btn btn--primary btn--sm hdr__cta" href={WA_BOOKING} target="_blank" rel="noopener"><span>Hold us a table</span></a>
+      <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="drawer" data-menu>
+        <span class="visually-hidden">Open menu</span><i aria-hidden="true"></i><i aria-hidden="true"></i>
+      </button>
+    </div>
+    <span class="hdr__rule" aria-hidden="true"></span>
+  </header>
+
+  <nav class="drawer" id="drawer" aria-label="Menu" hidden>
+    <ul>
+      {SECTIONS.slice(1).map((s) => <li><a href={`#${s.id}`}>{s.short === 'Ethos' ? 'Philosophy' : s.short === 'Look' ? 'Gallery' : s.short === 'Why' ? 'Why Kudos' : s.short === 'Book' ? 'Reservations' : s.short === 'Note' ? 'In a sentence' : s.short}</a></li>)}
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================================================= 01 HERO -->
+    <section class="sec hero" id="top" data-section aria-labelledby="hero-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap grid hero__grid">
+        <div class="hero__copy">
+          <SectionHead num="01" label="Rooftop restro lounge · Udaipur" level="h1" id="hero-title" class="hero__head">
+            <span class="hero__l1" data-hero style="--i:0">Udaipur has its own <em>rhythm.</em></span>
+            <span class="hero__l2" data-hero style="--i:1">We have our own way of playing it.</span>
+          </SectionHead>
+          <p class="hero__stand" data-hero style="--i:2">Good food. Great drinks. Beautiful views. Music that sets the mood.</p>
+          <p class="hero__body" data-hero style="--i:3">
+            Welcome to Kudos Restro Lounge — where a relaxed afternoon can turn into an unforgettable evening,
+            where food is uncomplicated, hospitality is genuine and every table has a story of its own.
+          </p>
+          <div class="hero__ctas" data-hero style="--i:4">
+            <a class="btn btn--primary" href={WA_BOOKING} target="_blank" rel="noopener"><span>Hold us a table</span></a>
+            <a class="btn btn--ghost" href="#food"><span>See what's cooking</span></a>
+          </div>
+          <div class="hero__meta" data-hero style="--i:5">
+            <p class="status" data-status data-hours={hoursJson}>
+              <span class="status__dot" aria-hidden="true"></span>
+              <span data-status-text>Message us for today's hours</span>
+            </p>
+            <p class="label hero__cta-line">Come for the view. Stay for the vibe.</p>
+          </div>
+        </div>
+        <div class="hero__media">
+          <Img name="kudos-terrace-palace-table" crop="4x5" arch eager aperture={false}
+            sizes="(min-width: 1440px) 640px, (min-width: 1024px) 42vw, 100vw" />
+        </div>
+      </div>
+      <a class="scroll-cue label" href="#note"><span>Keep reading</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- 6 · MENU-BOARD TICKER (only horizontal motion on the page) -->
+    <div class="ticker" aria-hidden="true" data-ticker>
+      <div class="ticker__track" data-ticker-track>
+        {tickerRun.map((t) => <span class="ticker__item">{t}</span>)}
+      </div>
+    </div>
+
+    <!-- ================================================= 02 BRAND STATEMENT -->
+    <section class="sec statement surface-sand" id="note" data-section aria-labelledby="note-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap statement__wrap">
+        <div class="grid statement__grid">
+          <div class="statement__copy">
+            <SectionHead label="In a sentence" id="note-title" class="statement__head">
+              Not too fine. Never <em>ordinary.</em>
+            </SectionHead>
+            <p class="statement__line" data-reveal="snap">
+              A little sophistication. A lot of character. Good food, thoughtfully served, in a place where the best
+              part of the evening is often the part you didn't plan.
+            </p>
+
+            <div class="statement__highlights" data-reveal="snap">
+              <div class="statement__card">
+                <div class="statement__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="statement__card-title">Terrace Over Lake Pichola</h3>
+                  <p class="statement__card-text">Direct rooftop views of the City Palace and sunset over the Aravalli hills.</p>
+                </div>
+              </div>
+
+              <div class="statement__card">
+                <div class="statement__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="statement__card-title">Food Without Pretentions</h3>
+                  <p class="statement__card-text">Flavour-forward multi-cuisine dining with fresh, honest ingredients and great recipes.</p>
+                </div>
+              </div>
+
+              <div class="statement__card">
+                <div class="statement__card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12-2a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="statement__card-title">Vibrant Nights & Good Drinks</h3>
+                  <p class="statement__card-text">From relaxed golden hour lounging to weekend DJ sets and cocktail evenings.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="statement__actions" data-reveal="snap">
+              <a class="btn btn--primary" href="#food"><span>Explore the Menu</span></a>
+              <a class="btn btn--ghost" href="#story"><span>Our Story</span></a>
+            </div>
+          </div>
+
+          <div class="statement__media" data-reveal="snap">
+            <div class="statement__figure">
+              <Img name="kudos-terrace-hill-view" crop="4x5" arch aperture={false} sizes="(min-width: 1024px) 460px, 90vw" />
+              <div class="statement__badge">
+                <span class="statement__badge-dot" aria-hidden="true"></span>
+                <div>
+                  <p class="statement__badge-title">Rooftop Lounge · Udaipur</p>
+                  <p class="statement__badge-sub">City Palace & Lake Pichola View</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 03 PHILOSOPHY -->
+    <section class="sec philosophy" id="philosophy" data-section aria-labelledby="philo-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap grid">
+        <div class="philosophy__main">
+          <SectionHead num="03" label="Philosophy" id="philo-title">
+            Simple Food. Good Food. <em>No Nonsense.</em>
+          </SectionHead>
+          <p class="lede" data-reveal="snap">
+            We believe the restaurant industry sometimes makes food unnecessarily complicated. We believe in keeping
+            things honest. What matters is getting the basics absolutely right.
+          </p>
+          <div class="pillars" data-pillars>
+            {PILLARS.map((p, i) => (
+              <div class:list={['pillar', { 'is-active': i === 0 }]} data-pillar={i}>
+                <h3 class="pillar__h">
+                  <button type="button" class="pillar__btn" id={`pillar-b-${i}`} aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`pillar-p-${i}`}>
+                    <span class="pillar__title">{p.title}</span>
+                    <span class="pillar__icon" aria-hidden="true"></span>
+                  </button>
+                </h3>
+                <div class="pillar__panel" id={`pillar-p-${i}`} role="region" aria-labelledby={`pillar-b-${i}`}>
+                  <div><p class="pillar__line">{p.line}</p></div>
+                </div>
+                <span class="pillar__rule" aria-hidden="true"></span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="philosophy__aside" aria-live="polite">
+          <div class="philosophy__stack" data-reveal="ap">
+            {PILLARS.map((p, i) => (
+              <figure class:list={['philosophy__fig', { 'is-active': i === 0 }]} data-pillar-fig={i} aria-hidden={i === 0 ? undefined : 'true'}>
+                <Img name={p.img} crop="4x5" aperture={false} sizes="(min-width: 1024px) 34vw, 90vw" />
+              </figure>
+            ))}
+          </div>
+          <p class="fig-cap label" data-pillar-cap>The Right Taste</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 04 OUR STORY -->
+    <section class="sec story" id="story" data-section aria-labelledby="story-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="grid story__intro">
+          <div class="story__intro-head">
+            <SectionHead num="04" label="Our story" id="story-title">
+              Not every great story begins at the <em>top.</em>
+            </SectionHead>
+          </div>
+          <p class="story__opener dropcap" data-reveal="snap">
+            Kudos was struggling when it changed hands. The obvious move was to close it, rename it and relaunch.
+            We decided to rebuild while keeping the doors open — one piece at a time, in front of the guests who
+            kept walking in.
+          </p>
+          <dl class="stats" data-reveal="snap">
+            <div><dt>Days we closed the doors</dt><dd data-count="0">0</dd></div>
+            <div><dt>Things rebuilt, in order</dt><dd data-count="3">3</dd></div>
+            <div><dt>Non-negotiables</dt><dd data-count="5">5</dd></div>
+          </dl>
+        </div>
+
+        <ol class="chapters" data-chapters>
+          <span class="chapters__rule" aria-hidden="true" data-chapters-rule></span>
+          {CHAPTERS.map((c, i) => (
+            <li class:list={['chap', { 'chap--flip': i % 2 === 1 }]} data-chap>
+              <div class="chap__text" data-reveal="snap">
+                <h3 class="h3">{c.title}</h3>
+                <p>{c.body}</p>
+              </div>
+              <div class="chap__media">
+                <Img name={c.img} crop="4x5" arch={c.arch} sizes="(min-width: 1024px) 30vw, 88vw" />
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div class="grid founder">
+          <figure class="founder__portrait">
+            <div class="media media--arch" style="--ar:4/5">
+              <img
+                src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/img/founder-portrait.jpg`}
+                alt="Vathsaal Jogani, Founder of Kudos Restro Lounge"
+                loading="lazy"
+                width="640"
+                height="800"
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+          </figure>
+          <blockquote class="founder__quote" data-reveal="snap">
+            <p>“The best compliment a restaurant can receive is not just a good review. It is seeing the same guests
+            walk through its doors again.”</p>
+            <footer><cite>Vathsaal Jogani, Founder</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 05 THREE MOODS -->
+    <section class="sec moods surface-sand" id="moods" data-section aria-labelledby="moods-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap">
+        <SectionHead num="05" label="Three moods, one rooftop" id="moods-title">
+          The evening changes with the <em>light.</em>
+        </SectionHead>
+        <ul class="moods__row">
+          {MOODS.map((m, i) => (
+            <li class="mood" style={`--i:${i}`}>
+              <article class="mood__card" data-tilt data-reveal="snap">
+                <Img name={m.img} crop="4x5" arch sizes="(min-width: 1024px) 28vw, (min-width: 768px) 44vw, 88vw" />
+                <div class="mood__body">
+                  <p class="label mood__time">{m.time}</p>
+                  <h3 class="h3">{m.title}</h3>
+                  <p>{m.lines[0]}<br />{m.lines[1]}</p>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================================= 06 FOOD -->
+    <section class="sec food" id="food" data-section aria-labelledby="food-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="grid food__intro">
+          <div class="food__head">
+            <SectionHead num="06" label="The food · multi-cuisine" id="food-title">
+              One table. No need to agree on <em>one kind</em> of food.
+            </SectionHead>
+          </div>
+          <div class="food__copy" data-reveal="snap">
+            <p>
+              People should be able to come together around one table without having to agree on one kind of food.
+              We are not trying to impress anyone with complicated culinary terminology. We want you to enjoy your
+              food, remember what you ordered and come back for it.
+            </p>
+            <p class="food__kicker">The food should do the talking.</p>
+          </div>
+        </div>
+
+        <div class="board">
+          <div class="board__list">
+            {MENU.map((cat) => (
+              <div class="board__cat">
+                <div class="board__cat-head">
+                  <h3 class="label board__cat-title">{cat.category}</h3>
+                </div>
+                <ul>
+                  {cat.dishes.map((d) => (
+                    <li class="dish" data-reveal="snap">
+                      <button type="button" class="dish__btn" data-lightbox-open={d.img} data-lightbox-crop="4x5">
+                        <span class="dish__name">{d.name}</span>
+                        <span class="dish__lead" aria-hidden="true"></span>
+                        <span class="dish__tag">{d.tag}</span>
+                        <span class="visually-hidden"> — view photo</span>
+                      </button>
+                      <div class="dish__photo">
+                        <Img name={d.img} crop="4x5" aperture={false} alt="" sizes="(min-width: 1024px) 220px, 72px" />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <aside class="board__aside">
+            <p class="label board__hint">Hover a dish. <br />We'll bring it out.</p>
+            <a class="btn btn--ghost" href={MENU_LINK} target="_blank" rel="noopener"><span>Get the full menu</span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 07 THE BAR -->
+    <section class="sec bar surface-clay" id="bar" data-section aria-labelledby="bar-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap grid">
+        <div class="bar__copy">
+          <SectionHead num="07" label="The bar · cocktail lounge" id="bar-title">
+            A counter that glows a little <em>warmer</em> after dark.
+          </SectionHead>
+          <div data-reveal="snap">
+            <p class="lede">
+              Cocktails built properly, classics poured honestly, and a bartender happy to talk you into something
+              new — or leave you to your usual.
+            </p>
+            <p>
+              The bar runs on the same rule as the kitchen: get the basics absolutely right, every single time.
+              Come up for one at golden hour. See where the evening takes it.
+            </p>
+            <a class="btn btn--primary" href={WA_BOOKING} target="_blank" rel="noopener"><span>Save us a seat at the bar</span></a>
+          </div>
+        </div>
+        <div class="bar__pair">
+          <Img name="kudos-bar-counter" crop="4x5" arch class="bar__a" sizes="(min-width: 1024px) 26vw, 60vw" />
+          <Img name="kudos-lounge-bar-room" crop="4x5" class="bar__b" sizes="(min-width: 1024px) 20vw, 44vw" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 08 MUSIC & EVENTS (the one dark band) -->
+    <section class="sec band" id="nights" data-section data-dark aria-labelledby="nights-title">
+      <div class="band__open" data-band>
+        <div class="bgrid" aria-hidden="true"></div>
+        <div class="wrap">
+          <div class="band__top">
+            <SectionHead num="08" label="Music & nights" id="nights-title">
+              The night belongs to the <em>people.</em>
+            </SectionHead>
+            <div class="eq" aria-hidden="true">{Array.from({ length: 7 }).map((_, i) => <span style={`--i:${i}`}></span>)}</div>
+          </div>
+          <div class="grid band__grid">
+            <ul class="nights">
+              {NIGHTS.map((n) => (
+                <li class="night" data-reveal="snap">
+                  <h3 class="label night__title">{n.title}</h3>
+                  <p>{n.body}</p>
+                </li>
+              ))}
+            </ul>
+            <div class="band__media">
+              <Img name="kudos-lounge-stage" crop="3x2" sizes="(min-width: 1024px) 40vw, 92vw" />
+              <a class="btn btn--light" href={WA_EVENTS} target="_blank" rel="noopener"><span>Plan an evening with us</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= 09 GALLERY -->
+    <section class="sec gallery" id="gallery" data-section aria-labelledby="gallery-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap gallery__head">
+        <SectionHead num="09" label="Contact sheet" id="gallery-title">
+          Have a <em>look</em> around.
+        </SectionHead>
+        <div class="gallery__controls">
+          <p class="label gallery__hint"><span class="only-fine">Drag to look around</span><span class="only-coarse">Swipe to look around</span></p>
+          <button type="button" class="icon-btn" data-sheet-prev aria-label="Scroll contact sheet left"><span aria-hidden="true">←</span></button>
+          <button type="button" class="icon-btn" data-sheet-next aria-label="Scroll contact sheet right"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div class="sheet" data-sheet tabindex="0" role="region" aria-label={`Contact sheet, ${galleryItems.length} photographs. Use arrow keys to scroll; select a photo to enlarge.`}>
+        <ul class="sheet__grid">
+          {galleryItems.map((g) => (
+            <li class="sheet__item">
+              <button type="button" class="sheet__btn" data-lightbox-open={g.name} data-lightbox-crop={g.dish ? '4x5' : '3x2'} data-index={g.i}
+                aria-label={`Enlarge ${g.code}: ${g.caption}`}>
+                <Img name={g.name} crop="1x1" aperture={false} alt="" sizes="(min-width: 1024px) 220px, 44vw" />
+              </button>
+              <p class="sheet__cap">{g.caption}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================================= 10 WHAT MAKES KUDOS DIFFERENT -->
+    <section class="sec different surface-sand" id="different" data-section aria-labelledby="diff-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap">
+        <SectionHead num="10" label="What makes Kudos different" id="diff-title">
+          Eight things we refuse to get <em>wrong.</em>
+        </SectionHead>
+        <ol class="diff">
+          {DIFFERENT.map((d) => (
+            <li class="diff__item" data-reveal="snap">
+              <svg class="diff__check" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10.5l4 4 9-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <div>
+                <h3 class="diff__title">{d.title}</h3>
+                <p>{d.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================================================= 11 RESERVATIONS & CONTACT -->
+    <section class="sec visit" id="visit" data-section aria-labelledby="visit-title">
+      <div class="bgrid" aria-hidden="true"></div>
+      <div class="wrap grid">
+        <div class="visit__info">
+          <SectionHead num="11" label="Reservations & contact" id="visit-title">
+            Hold us a <em>table.</em>
+          </SectionHead>
+          <p class="lede" data-reveal="snap">
+            The quickest way to a table is WhatsApp. Tell us the day, the time and how many of you — we'll take it
+            from there.
+          </p>
+          <div class="visit__ctas" data-reveal="snap">
+            <a class="btn btn--primary btn--reserve" href={WA_BOOKING} target="_blank" rel="noopener"><span>Book on WhatsApp</span></a>
+            {phoneSet
+              ? <a class="btn btn--ghost" href={TEL_LINK}><span>Call {PHONE_DISPLAY}</span></a>
+              : <a class="btn btn--ghost" href={TEL_LINK}><span>Call us</span></a>}
+          </div>
+
+          <div class="visit__cols">
+            <div data-reveal="snap">
+              <h3 class="label visit__h">Hours</h3>
+              <table class="hours">
+                <caption class="visually-hidden">Opening hours</caption>
+                <tbody>
+                  {HOURS.map((h) => (
+                    <tr><th scope="row">{h.label}</th><td>{isSet(h.opens) && isSet(h.closes) ? `${h.opens} – ${h.closes}` : 'To be confirmed'}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div data-reveal="snap">
+              <h3 class="label visit__h">Find us</h3>
+              <address class="visit__addr">
+                Kudos Restro Lounge<br />{addressLine}<br />Rooftop — look up.
+              </address>
+              <a class="link" href={DIRECTIONS_URL} target="_blank" rel="noopener">Get directions</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="visit__form">
+          <form class="form" data-form data-endpoint={FORM_ENDPOINT} data-wa={WHATSAPP_NUMBER} novalidate aria-labelledby="form-title">
+            <h3 class="h3" id="form-title">Or send us an enquiry</h3>
+            <p class="form__intro">Big table, special occasion, or just a question — we read every one.</p>
+            <div class="form__hp" aria-hidden="true">
+              <label for="f-company">Leave this empty</label>
+              <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="field field--full">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" />
+              <p class="field__err" id="e-name" data-msg="We'll need a name to put on the table."></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-phone" />
+              <p class="field__err" id="e-phone" data-msg="A number we can reach you on, please — 10 digits works."></p>
+            </div>
+            <div class="field">
+              <label for="f-guests">Guests</label>
+              <select id="f-guests" name="guests" required aria-describedby="e-guests">
+                <option value="">How many?</option>
+                {['1', '2', '3', '4', '5', '6', '7', '8', '9–12', '13+'].map((g) => <option value={g}>{g}</option>)}
+              </select>
+              <p class="field__err" id="e-guests" data-msg="How many of you are coming?"></p>
+            </div>
+            <div class="field">
+              <label for="f-date">Date</label>
+              <input id="f-date" name="date" type="date" required aria-describedby="e-date" />
+              <p class="field__err" id="e-date" data-msg="Pick a day — any day from today on."></p>
+            </div>
+            <div class="field">
+              <label for="f-time">Time</label>
+              <input id="f-time" name="time" type="time" required aria-describedby="e-time" />
+              <p class="field__err" id="e-time" data-msg="Roughly what time should we expect you?"></p>
+            </div>
+            <div class="field field--full">
+              <label for="f-occasion">Occasion <span class="opt">(optional)</span></label>
+              <select id="f-occasion" name="occasion">
+                <option value="">Just dinner</option>
+                <option>Birthday</option><option>Anniversary</option><option>Celebration</option>
+                <option>Private booking</option><option>Something else</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="f-notes">Anything else? <span class="opt">(optional)</span></label>
+              <textarea id="f-notes" name="notes" rows="3"></textarea>
+            </div>
+            <button class="btn btn--primary form__submit" type="submit"><span>Send enquiry</span></button>
+            <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================= 12 FOOTER -->
+  <footer class="foot surface-clay">
+    <div class="wrap">
+      <div class="grid foot__grid">
+        <div class="foot__about">
+          <p class="foot__tag">{BRAND.name} — {BRAND.tagline}</p>
+          <p>A rooftop destination in Udaipur. Good food without complications. Hospitality without pretence. Evenings with their own personality.</p>
+        </div>
+        <nav class="foot__nav" aria-label="Footer">
+          <h2 class="label">Index</h2>
+          <ul>{HEADER_NAV.map((l) => <li><a class="link" href={l.href}>{l.label}</a></li>)}</ul>
+        </nav>
+        <div class="foot__social">
+          <h2 class="label">Elsewhere</h2>
+          <ul>
+            {socials.map((s) => <li><a class="link" href={s.url} target="_blank" rel="noopener">{s.label}</a></li>)}
+            <li><a class="link" href={WA_BOOKING} target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a class="link" href={DIRECTIONS_URL} target="_blank" rel="noopener">Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__legal">© {year} Kudos Restro Lounge · Udaipur, Rajasthan</p>
+    </div>
+  </footer>
+
+  <!-- mobile action bar -->
+  <nav class="actionbar" aria-label="Quick actions">
+    <a href={TEL_LINK}>Call</a>
+    <a href={WA_BOOKING} target="_blank" rel="noopener" class="actionbar__wa">WhatsApp</a>
+    <a href={DIRECTIONS_URL} target="_blank" rel="noopener">Directions</a>
+  </nav>
+
+  <!-- 10 · LIGHTBOX -->
+  <dialog class="lightbox" data-lightbox aria-labelledby="lb-cap">
+    <div class="lightbox__frame">
+      <figure class="lightbox__fig">
+        <picture data-lb-pic><img data-lb-img alt="" /></picture>
+        <figcaption id="lb-cap" class="lightbox__cap"><span class="label" data-lb-code></span> <span data-lb-text></span></figcaption>
+      </figure>
+      <div class="lightbox__ui">
+        <button type="button" class="icon-btn" data-lb-prev aria-label="Previous photo"><span aria-hidden="true">←</span></button>
+        <button type="button" class="icon-btn" data-lb-next aria-label="Next photo"><span aria-hidden="true">→</span></button>
+        <button type="button" class="icon-btn lightbox__close" data-lb-close aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </dialog>
+  <script type="application/json" id="lb-data" set:html={JSON.stringify(
+    Object.fromEntries(Object.keys(ALT).map((k) => [k, { alt: ALT[k], cap: CAPTION[k] }]))
+  )} />
+  <script>
+    import '../scripts/main';
+  </script>
+</Base>

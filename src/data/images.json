@@ -1,0 +1,650 @@
+{
+ "kudos-terrace-palace-table": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQBACdASoUABkAPu1mqk2ppaQiMAgBMB2JYwCw7CPgVYz1idJK3LgoEZPBnkZIAAD+sUyJyMEf6evPQ/CvYiQdV4jpPwK+BLRAsDJSCO9eYnj2Ga6LzOKQsB/PBW54c7iD1jhNtmyvBpsqLTCcDJQA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JYwCdMoACRktQHOpusAAA/tOWNjYTfPEoGi7p3PX3YkdD8gG2QXUfJs6TDG+rsD2p9NEAAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBQCdASoUABQAPu1grVAppSQisBgIATAdiWMAvzgPEjewlwXut1essEICMZmxUyvAAP7TiLTUS/uJqb8RqRXKWtcuBjNzqDqV1XxQwwCd5tw6sBFOKBiqzfU48TeDZaZNr9MG64AAAA=="
+   }
+  }
+ },
+ "kudos-terrace-sunset-palace": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBQCdASoUABkAPtleo02oJaMiN/qoAQAbCWMAwoAejWmorZ6zZwpo5bYFCgLB9A4QAP6xjVEZHSOG0ICQc7DCJJgm6ggdIW2nQSluA3Fv1ChdaWbQH4SpvKBnCG6IdlAAAA=="
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoUAA0APu1kq04ppaQiMAgBMB2JYwCdACGq80oEtW+LWdmAAP6uvsEO3Wfh3afweHaVKLEQ4mEwk9pNzxzJCOW/Sw0yb5XrAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBQCdASoUABQAPu1srVEppiQiqAqpMB2JYwCdMzlBo+T9Rvjv0Ao7PjAkPx4nmauAAP6xTe0Y1lrcN7ITZrw5Q+GJtV4h0J1rIsbkTk0bdOkVPO3hOU3jMHm+O5iSPmripVs5OjUsuAAA"
+   }
+  }
+ },
+ "kudos-lounge-stage": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQBACdASoUABkAPu1qqk8ppiOiMBgIATAdiWUAAC53wowHHLScp1aOFv4qYulLwAD97TIrb6XnCuR6RFKi7whKJ1Q644oNOsvVNltVEIEdV25x00nM00Xpel/fMzvVFhoQHj0xO4DHAAAA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAwCdASoUAA0APu1kq04ppaQiMAgBMB2JZQCdABsG4+Rf9AD+VDQGP7K5llgR3miIsuBo5z9B+16DhqjEB983wUFAAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwBACdASoUABQAPuVepk2pJSOiN/VYASAciWcArwwPNTaI8Op8vwl3JKZKGTwAAP5gBHvt/lLGY6WNk5SpoEddlYz72H6xQzq0dVyum+uTGTS/jX6LHlQkfjp+AA=="
+   }
+  }
+ },
+ "kudos-terrace-dining-day": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQBACdASoUABkAPu1krVCppSQisBgIATAdiWcAtOgPHmV5DPczZOkdrZJ67iI8AAD+U/F1eMyPhhkNSuzswtJX9PPkuOXMrdE/2Zq5DTqv8g8Qp1vIgAzYWGERsRgA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQBACdASoUAA0APu1mqk4ppaOiMAgBMB2JZQCdMvIC+0dcj6O24nTUQAD+stKgx2l4g2g3Q8FOMp8A5pJq1Mod3Jk8AA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwBACdASoUABQAPu1cqE2ppKQiN/VYATAdiWcAACkVK42K6YNe6mxl9AAA/lPxZ1yOwQd+3LzhUfvt2rxFrTZpKpCLhOHW6hSN2ReBnmA5XY6WfgA="
+   }
+  }
+ },
+ "kudos-terrace-dining-dusk": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwBACdASoUABkAPuFeqU2opSQiMAwBEBwJZQCzgBe2yJLV40IG5QVqo41gPEfywAAA1tdFauA0WUVVcPdExFxjnfIT1oJusYfnlF7kABgqw8RXh+uoxZ/9mZE6RoAA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoUAA0APu1mqk2ppaQiMAgBMB2JZQCdAB3MbIsN4N3QAP2re/KAbHnJnojcAPcEzkkPHPKQ9+wGYtHXC6L+wA8Tyg0wjG2QAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwBACdASoUABQAPu1iqU2ppaQiMBgMATAdiWUAtOgLFF6bo1ySE9r6vw7As24AANbXRjsXOqaKM8Itq5OJ9jPvUlfEXwgVAREL5+UtS/q9UEx7LAAAAA=="
+   }
+  }
+ },
+ "kudos-terrace-hill-view": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwBACdASoUABkAPulipE2pJaMiMAwBIB0JZQCw7CID5XSajWjPNogNpuw3ufP1wAAA/lGirBV4sDyFyhbMflhwqO9t9OG3QyctbRMKRGvNA/VAGOhZePcXgIqHQenfP3qkCWFKu8yAAA=="
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCdACFpZO1VjaEBijAA/c6inesdH90+1jopuCYIlgUBCCG8Orc53pO4TAcMS/Hf6AAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACQBACdASoUABQAPu1krVAppSQisBgIATAdiWUAxNgLE8ztAaZh+G/8gM1qd8AA/duY5w1BLOzX30htDPG2y5hdT7HZZVsmcywbJXX+uG8L8kPzBBxI8POAgmgAAA=="
+   }
+  }
+ },
+ "kudos-lounge-bar-room": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwBQCdASoUABkAPu1krE4ppaSiKA1RMB2JYgCdMtpGzqZ3EgbA5binkuJ62OVOVFgLAAD+0yX9fBO0ewcElRRREWLqgiz3KIg1OBCN4VkE2bkWVm+Q5WMVwvteVclTrhyLjnbhtkJFJO4o5k2B/QwA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JQBOgA9DJgSpT8ZrVAAD+w9jaAx8YVKvVAePk2uRc8mbaRMUiYgQQiPY1943MRK+vWrAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQBACdASoUABQAPuVgpU2pJaOiMAwBIByJQBWF+pA6Ib2/VJmag8mjLCSZq8AA/q699YKL5hsPYRukx9UfRUhTumw1BBrrBW+3c8OMlH5U+ph4COaLtPPzlFr8NkyoA459HcAA"
+   }
+  }
+ },
+ "kudos-bar-counter": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQBQCdASoUABkAPu1gqE4ppSOiMBgMATAdiWYAsR8mAW9HgeNBPrtP8N9UUrvUrENvWROKsuRQAP54IYdBQ+FmP2k22Kb0Kf+OhzlcyDcvwD1Qx1pxRP4TbEjeO2o4lRDlCwGWZAdEQ+JzFU6KRSDzR5aspWX9Y1XjkWUN9/9DciFIAAA="
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JYgCdAB0hUvVQlDHO2AAA/TigDDJ902ngbHViN1q6DDZrI0qCC3beUaFSLyX0ZDn9moiojOR9Rw9F4AAAAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASoUABQAPulcp02pJKOiN/VYASAdCWYAsR7VQUgQ3sIxllZ9LY9V1xRJBT5UAAD9U1e2B2R7sg6QD6lWwpFyjMNJI+Bk99Kblb7mkvmceku6CfFw1JQkTD+WkStKf000yMN+JlISagOWdCo7jQAAAA=="
+   }
+  }
+ },
+ "kudos-lounge-evening-neon": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwBACdASoUABkAPu1orVCppaQiqAqpMB2JYwC7ABENxOWzk/qKXjjkO52YUJmB/oAA/q77Xh9iMgLuZnAvlixExozwl+213j+bp7w6shEz8nQMw7hWvN6FbMxPMFZ5uZqgFgV0Hub0RBTCl9Qzl0AA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoUAA0APu1kq04ppaQiMAgBMB2JYwCdMoADT4RXDsnTWesdwAD92EVVgYdGSxZJW3tj59l6WmbNmrMgpxpgkGq0qED8okZLgMz4AAAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoUABQAPu1ysFKppqSiqAgBMB2JYwAALmz2TbVKvkVFiB0kgAD+jDuXUkwU14KMbM3aBX/cnYITDSH/rkdmqXg6tU5HqxRosEC+iBRCQfqc76uFqW6Kx7G4G3AAAA=="
+   }
+  }
+ },
+ "kudos-terrace-night-lights": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQBACdASoUABkAPu1srlEppiQiqAqpMB2JYwCw7A9mQ6+kBeUwzKulfTZS5gAA/rYUja/N4WxG9LGvalCmA4t36GjAlAdqOAwbzyYK6fIF7uAQrLvn8PXVpilnVrNwo5SXVla0ERNUD3TC06gfZpTwAAA="
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JQBOmUABeddSTceEAAN5VYquYlfjLPQpo/iQsHcSYkLzzUeJaN1SwbGIOTDib+4M+95wiZ5IvqQgA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoUABQAPu1wr1KppiQiqAgBMB2JYwAAG5q7S2Q9EMBVSFmAgAD945VN2nwqw1cb2DuMCyw+ENB5Sx6dE67on99j6RFDRIl20fg6oPY6qO3Od91zqRDtHY9etqKmhgzPLJspgAAA"
+   }
+  }
+ },
+ "kudos-interior-hall-night": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwBACdASoUABkAPu1mrFAppSQisBgIATAdiWMAAC3DP684joTYklFnJxitEDlFnsAA/ovSOyyd8yyk1JuCWur/3rTDV7ZO1AIqSr6a2lUKwt6DrwdIWdppx78hhaqZ79G0SmBopaL4w2DyTp/AAAAA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JQBOgBClSP7ZxDqMHTVKAAPznMlmF3k+m9DqA+nWx01c66Q4NH4VnT5C+dMq5l+7AAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQBACdASoUABQAPu1mq06ppaOiKA1RMB2JYwCB+wR3W6dKJ843K2nyetqQ5kAA/q69/DSz2uNOKESCRd7rZUv/ovGceb/KNty5mF5QOqdef4tRqqrPtBeNvca0Np+RBPlS2zyH97NG7uMAAAA="
+   }
+  }
+ },
+ "kudos-interior-dining-night": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwBACdASoUABkAPu1srVEppiQiqAqpMB2JYwAALilz3DNYCehZKaYmI7kz0AD+549u1VmhN0kTLLCgo3/VRtM7ZFDN47UW+9Ngd1rcMKTY0b5D8P1/RlKLjNL/TQbOpPHnmyvoEtIAAAAA"
+   },
+   "3x2": {
+    "widths": [
+     640,
+     1024,
+     1600,
+     2400
+    ],
+    "ratio": "3x2",
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoUAA0APu1kqU2ppaQiMAgBMB2JQBOmUABsQtyeZKR6f/AAAP63CJ/UOpafkgUiSavwlOOOT0XTrSL9CN3pBGVTXToOWMksDKmH/HDAAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQBACdASoUABQAPu1sq1EppaOiqAqpMB2JYwC3uBGSZGSb50rQObiLBlVqHwSAwAD+5x/xQqk5D5mcVr5rk+kuhEbIojCRthcDLIn/pJ00DGnx5BTFCWOouXtIQIAA"
+   }
+  }
+ },
+ "kudos-dish-wonton": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoUABkAPu1iqE2ppaOiMAgBMB2JZgCdM2QBd4J1DUryejg3nUlY+iJLTAAA/s6nBuShRE2Lsy7+cG6KCTVqXzPtVeAYJ4UpPn0EhuQVnktqL8UnUnS8F/Y3D/rT3g1fKGXQI7jAPf7r1z/EtMVSkeIREiTaAAAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQBACdASoUABQAPu1gqU2ppSQiMBgMATAdiUAWHYGdBVYNY9wtYtABXGudY2UXAAD+ufStjGxUMv9rlj15a/jtXWMaI4WnSlmVvTrUEKBb6ByMOmrRPfuzGSHQKPhcSDyK4AAA"
+   }
+  }
+ },
+ "kudos-dish-mexican-rice": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASoUABkAPu1sqlEppaOjqAqpMB2JaACdMoR7X0AAGbtGn5e35jkv9PaNyIkiAAD+yQZG2lzUbjawskFcSW+/xf/iQK2vstjgO/pn0qXiqwZzCt0saHL6uV5GIYXUsAvVycjkMX71DFO8mEWM7nJQdU8+bFH3tmzAAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACQBACdASoUABQAPu1cq02ppKQiMBgMATAdiUAVHoGfrMShRL1J38Gq/TMwT7QA/uCf8gViptyWywdmgI6XxoCfgK971CVP+/cMqlyO9doIi/eLV64BEARtA1VccSLNCNcGLB22xhTtnVMQwBuW9lFpkn8xpEAA"
+   }
+  }
+ },
+ "kudos-dish-beetroot-tikki": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwBACdASoUABkAPu1sq08ppiOiMBgIATAdiUAYUAI/qYVlxxEkkWCkeSL2mcAAAP7p9EeWNDhyei1sTHAA0LWEbVihXmFRGGtLo0GZogZaVCxMKRdeI2914+i/RzTCYQwNu2bQq5jOqjxV0d9AAAAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQBACdASoUABQAPu1ip04ppawiMBgMAYAdiWMAACk6VoI2He+3vAujx97IblAA/qbDM011/zaWE1sjE3ZwLIOn5js4SopW/3J1vC9wnBuN6KiFxSNXVTRTessZ6GS/3f+Np6QVlAAAAA=="
+   }
+  }
+ },
+ "kudos-dish-tandoori-chicken": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQBACdASoUABkAPu1mq0+ppSOiMBgIATAdiWYAnTMvwZttb9wRRT2By8C4m8DpAAD+y8/7zHPmsVVTAZ+APIV9g9/asAXVdVo1GeUYeS3ADnimg8cg3ipokkdm84JXxod/b4Bi7cIY57H8TxlAwlpfGahmV1VzYAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQBACdASoUABQAPu1gqU4ppSOiMBgMATAdiUAY3oFJCBPlFGJuYLAB6ep4hzAA/rnnJSkLjCaxl82+dvqaei1NQKkaG3XsMzukgek5kmTl5WN35/eHKsLrTOccT4YiqUXEvNZn6WAAAA=="
+   }
+  }
+ },
+ "kudos-dish-chicken-sheekh-naan": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADQBACdASoUABkAPu1gp02ppSMiMAgBMB2JQBYdg0GnaWIuqmufC+2bjKXQIULnwAD+2VgdfXwHPC8WHiEEmATqtBt01PhGGs1eFnpZW8LEuctFFZnBYJgLphzluDp0ugaG+OR8KVwRn/jRXG/OO91OF2BHfKYUfmRAAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwBACdASoUABQAPu1mqk8ppaOiKA1RMB2JYgC7AA05hq9ZXfbuavFxMJlzUFlCzgAA/svryOzkCJUuydyqR7mBiV78YoTsaFpG26/ImYX3boi0LkIp+QYpEY70Hq0A5nxYYBqEAAA="
+   }
+  }
+ },
+ "kudos-dish-sham-savera": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBQCdASoUABkAPulgpE2pJaMiMAwBIB0JYgC7M2QDTp2flz7+iPi54PmTN5As1oAAAP7iy80r3tBXvVXIvUBzU9DMXU1RCsOuiTh0IDRb6KUfP6yDf4EBQAAAAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBQCdASoUABQAPulkqk2pJaQiMBgMASAdCWIAsR8vwYBiPePzvRbk0jICmompMHsAAP7o8PHeEgOavRtcsydeyaZrnon87wkEWIu9t+Ebn0gtUiANOlwsNuHOu4AA"
+   }
+  }
+ },
+ "kudos-dish-pasta-barbesca": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwBACdASoUABkAPu1oqk4ppiQiMAgBMB2JYgDDNB6OUPJIJ70iPsE4iPiJxZk1ZoAA/rvyAlvcYrr2q8xzlENwYmgKq38+1iQordXGGAIZ7hvhm0FvlZRUTsyO3VGN/gC9q78eerKPoAAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwBACdASoUABQAPu1mq08ppaOiKA1RMB2JQBdgAiLnRxwdc+hZ/qzJ3OSqAAD+nn04AIAV90gwOj76WsW6HyxJbKhSlrv9CZFGfrOkeaRNiiReebuhGWNQ1CZVn1b4nm9aBs5wAAA="
+   }
+  }
+ },
+ "kudos-dish-pasta-barbesca-fork": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBQCdASoUABkAPu1mq0+ppSOiMBgIATAdiWQAsR7jgpgTDFE7NryrN47RXNfPxqCjAAD+2nbGm/5r8GeFus182QgXPjOYV9lX+3NMBpWxUS2SQoI2jD+j3Br8DWpiQPGFjQAyOGzwqx9Sf56krMGIUjEnvkPnKLtEhaV5Q/Q8F4AA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwBACdASoUABQAPu1oqVAppiOiqA1RMB2JZACdMoR5aBTdVXHyeNRjWBe4jZgeQAAA/rkSBmzLQSIUQTtXPukyGg/qqhZGtiWvLcs+Y5HUa7gpGBZtQnwcS/UXi73gPRDQHlOFMU7VY7l2tHjGCGBolrVkB1TbAbzIAVURmB5t32OReAA="
+   }
+  }
+ },
+ "kudos-dish-laal-maas": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQBACdASoUABkAPu1qr1CppiQiqAqpMB2JZACxH1XBB9iTA1BrxhIRAYe+9/ygAADNsn7ldRJ3dZzWPJGJ9QfIHn1hqc6DtkxCennpIxlwV89IYl2X0xnCkUprJ2CDGEf4YFuTrDoe2bgNDvLukt6AAUAAAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwBACdASoUABQAPu1mqk+ppaO7MBgIA2AdiWMAeM4Bh+sxc55ZuUWt5rHYAAD4wJGG1Ut5cjMcajWGD4mZ2WfnbEovyQwZpi3zKbcfBVJkyU8//0ckzx8z11j9QgSMquAAAA=="
+   }
+  }
+ },
+ "kudos-dish-laal-maas-close": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBQCdASoUABkAPu1sqlEppaOiqAqpMB2JZgC7AAv+5KsozSxnaO7+D0cKWPM00EVCAAD+rScs133fI/bvXOeQ5dQ/6zq8NEl/n1L75gNvImPc1BCPkLEVaKrEY7cskPdG3MtZWYrOhNwbE6vDcshq9wx7lDocoizH8VRF/Y3TIpAjEoG6wIgAAAA="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBQCdASoUABQAPu1kq06ppaQiKA1RMB2JZgCdMoR1QBToyHbhuMgrrcwCOQUSdMj5j0AA/ofdJTZKGFalSSpkZqUFSU70JeAsSGRnYalIs9VfEIqv6/FgbODI13KC/aiXN5VP0kxqwWHZcIWnqk4oZNEiahgA"
+   }
+  }
+ },
+ "kudos-dish-veg-lasagna": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBQCdASoUABkAPu1kq0+ppSOiMBgIATAdiWYAnTNQvOgVS/os0FJ+9tsKcvWMhC/cg7xrScAA/uyvaFejEzRCBNPsDh54tvdNURmGu0YqS2Vw9xBUDIO2o9axa2SlupXDKZkiPvxW+I/TqAcBlXajsH53TNJlufoVI65XEZQlpK8Oc4efb547oPb+AAAA"
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBQCdASoUABQAPu1kq06ppaQiKA1RMB2JZACdMoR+ABAcERraWbJmTKwKu8uOIwg5QAD+6UJ0g6oBY1wYYAbkI+1nZ9OpQFxNg0OzljWpGSeCuRty+Pt7DmlW8eie78yauNKJt71AaJTzcUQpB7MbiZAe9cEXYUSe5qDH+KAAAA=="
+   }
+  }
+ },
+ "kudos-dish-fried-egg-curry": {
+  "crops": {
+   "4x5": {
+    "widths": [
+     640,
+     768,
+     1024,
+     1600
+    ],
+    "ratio": "4x5",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBQCdASoUABkAPuVgpE2pJaMiMAwBIByJZgCxH2QC9JI9IYBcJ90MhU5aiGmymytyUAD89VoTo1wuVUxMA03o6EfFKShfTbHKW5YvewNgriFc6AaocV/9Bl7ohkmDSXIiBZ38HNynH77SFa8IUI6fj4jQz38rgR8IAA=="
+   },
+   "1x1": {
+    "widths": [
+     320,
+     640
+    ],
+    "ratio": "1x1",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwBACdASoUABQAPu1mqk6ppaOiKA1RMB2JYgC06AxRIJZCxpXuilFvsBdebATAAP01yNFj4X9I9vnJG1eGx9P1nP8sy6YSRGjdTsLtbDpJC3lIxECH4Js4f2pIMVPDkO7C7RX84tfDcAAA"
+   }
+  }
+ }
+}

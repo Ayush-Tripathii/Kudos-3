@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.astro/
+.env
+_raw/
+scripts/image-build.log
